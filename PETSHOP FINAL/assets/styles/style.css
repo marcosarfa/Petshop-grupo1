@@ -1,0 +1,148 @@
+
+/* DIV DE CONTACTOS */
+.formulario{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background-image: url("../img/fondoHueso.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+textarea{
+    resize: none;
+}
+
+.tel{
+    background-color: #FFBC42;
+    width: 15rem;
+    height: auto;
+    padding: 0 2rem 0 2rem;
+}
+.email{
+    background-color: #D81159;
+    width: 15rem;
+    text-align: center;
+}
+.ubicacion{
+    background-color: #218380;
+    width: 15rem;
+    padding: 0 2rem 0 3rem;
+}
+.ancor{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ACA TERMINE STYLE DE CONTACTO */
+/* STYLE DE FARMACIA Y JUGUETERIA */
+.card-juguete{
+    transition: .3s ease-in-out;
+}
+.card-juguete:hover{
+    box-shadow: 0px 2px 5px 9px rgba(0,0,0,0.17);
+    transform: scale(1.03);
+}
+/* ACA TERMINA ESTILOS DE FARMACIA Y JUGUETERIA */
+
+/* COMIENZA Index */
+
+#mancha1{
+    height: 60vh;
+}
+
+.sobreNos{
+    border-radius: 0px;
+    background: #97C7C2;
+    box-shadow: inset 32px -32px 63px #85afab,
+    inset -32px 32px 63px #a9dfd9;
+    padding-right: 0%;
+}
+
+
+/* ESTILOS UNIVERSALES */
+@font-face {
+    font-family: "Orange Juice";
+    src: url(../font/Orange\ Juice.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --amarillo-oscuro:#FFBC42;
+    --coral:#D81159;
+    --vino:#8F2D56;
+    --verde-oscuro:#218380;
+    --verde-claro:#97C7C2
+    }
+body{
+    background-color: var(--verde-claro);
+}
+header{
+    min-height: 11vh;
+}
+main{
+    min-height: 73vh;
+}
+footer{
+    min-height: 16vh;
+}
+
+#letrasChicuelos{
+    display: none;
+}
+.bg-verdeO{
+    background-color: var(--verde-oscuro);
+}
+.bg-vino{
+    background-color: var(--vino);
+}
+.bg-coral{
+    background-color: var(--coral);
+    
+}
+.bg-verdeC{
+    background-color: var(--verde-claro);
+}
+
+@media (max-width:1023px){
+    #mancha1{
+        height: 30vh;
+    }
+}
+
+@media (max-width:768px){
+    #logoNav{
+        display: none;
+    }
+    #letrasChicuelos{
+        display: block;
+    }
+}
+
+@media (max-width:657px){
+    .sobreNos{
+        flex-direction: column;
+    }
+    #contenedorMancha1{
+        align-self: flex-end;
+    }
+
+    #mapa{
+        width: 500px;
+    }
+}
+
+@media (max-width:543px){
+    #contenedorMancha1{
+        align-self: flex-end;
+    }
+
+    #mapa{
+        width: 300px;
+        height: 300px;
+    }
+}
+/* ACA TERMINA ESTILOS UNIVERSALES */
