@@ -14,6 +14,9 @@ createApp({
     },
     created(){
         this.traerDatos()
+        if(JSON.parse(localStorage.getItem('carrito'))){
+            this.carrito=JSON.parse(localStorage.getItem('carrito'))
+        }
     },
     methods:{
         traerDatos(){
@@ -41,12 +44,15 @@ createApp({
                 this.carrito.push(producto)
                 console.log(this.carrito);
             }
+            localStorage.setItem('carrito',JSON.stringify(this.carrito))
         },
         eliminarCarrito(producto){
             this.carrito= this.carrito.filter(productoC => productoC != producto)
+            localStorage.setItem('carrito',JSON.stringify(this.carrito))
         },
         vaciarCarrito(){
             this.carrito= []
+            localStorage.setItem('carrito',JSON.stringify(this.carrito))
         },
         enviarMensaje(){
             Swal.fire({
