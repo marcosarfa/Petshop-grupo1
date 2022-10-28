@@ -90,8 +90,9 @@
                 </table>
             </div>
             <div class="container mt-5">
-                <form class="d-flex justify-content-center mb-5">
-                    <div class="d-flex flex-column col-6">
+                <form >
+                    <div class="d-flex justify-content-center mb-5">
+                    <div class="d-flex flex-column col-8">
                         <div class="mb-3 me-1">
                             <label for="exampleInputEmail1" class="form-label">Nombre y Apellido</label>
                             <input type="text" class="form-control" id="exampleInputEmail1"
@@ -101,7 +102,7 @@
                             <select class="form-select" aria-label="Default select example">
                                 <option disabled selected value="">
                                     Seleccione Forma de Compra
-                                  </option>
+                                </option>
                                 <option value="1">Retiro del Local</option>
                                 <option value="2">Envío a Domicilio</option>
                             </select>
@@ -111,22 +112,49 @@
                             <input type="text" class="form-control" id="exampleInputPassword1" />
                         </div>
                     </div>
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 ms-3 form-check">
                         <h7>Formas de Pago:</h7>
-                        <div>
-                            <input type="checkbox" class="form-check-input" id="VisaCard" />
-                            <label class="form-check-label" for="VisaCard"><img src="https://logoeps.com/wp-content/uploads/2014/01/24607-visa-logo-on-rectangular-button-icon-vector-icon-vector-eps.png" alt=""></label>
-                            <input type="checkbox" class="form-check-input" id="MasterCard" />
-                            <label class="form-check-label" for="MasterCard"><img src="https://www.nuestracoop.coop/wp-content/uploads/mastercard_256.png" alt=""></label>
-                            <input type="checkbox" class="form-check-input" id="Maestro" />
-                            <label class="form-check-label" for="Maestro"><img src="https://kunturflyfishing.com/wp-content/uploads/2020/09/tarjeta-maestro.png" alt=""></label>
-                            <input type="checkbox" class="form-check-input" id="AExpress" />
-                            <label class="form-check-label" for="AExpress"><img src="https://i2.wp.com/opticagalileo.com.ar/wp-content/uploads/2017/07/american.png?w=1080&ssl=1" alt=""></label>
+                        <div class="d-flex flex-wrap mb-1">
+                            <div class="form-check labelTarjeta d-flex align-items-center">
+                                <input class="form-check-input w-25" type="radio" name="flexRadioDefault" id="VisaCard">
+                                <label class="form-check-label" for="VisaCard"><img class="tarjeta"
+                                        src="https://logoeps.com/wp-content/uploads/2014/01/24607-visa-logo-on-rectangular-button-icon-vector-icon-vector-eps.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="form-check labelTarjeta d-flex align-items-center">
+                                <input class="form-check-input w-25 me-2" type="radio" name="flexRadioDefault" id="MasterCard">
+                                <label class="form-check-label" for="MasterCard"><img class="tarjeta"
+                                        src="https://www.nuestracoop.coop/wp-content/uploads/mastercard_256.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="form-check labelTarjeta d-flex align-items-center">
+                                <input class="form-check-input w-25 me-2" type="radio" name="flexRadioDefault" id="Maestro">
+                                <label class="form-check-label" for="Maestro"><img class="tarjeta"
+                                        src="https://kunturflyfishing.com/wp-content/uploads/2020/09/tarjeta-maestro.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="form-check labelTarjeta d-flex align-items-center">
+                                <input class="form-check-input w-25 me-2" type="radio" name="flexRadioDefault" id="AExpress">
+                                <label class="form-check-label" for="AExpress"><img class="tarjeta"
+                                        src="https://i2.wp.com/opticagalileo.com.ar/wp-content/uploads/2017/07/american.png?w=1080&ssl=1"
+                                        alt=""></label>
+                            </div>
                         </div>
+                        <select class="form-select mt-3" aria-label="Default select example">
+                            <option disabled selected value="">
+                                Tipo de Pago
+                            </option>
+                            <option value="1">Pago Único</option>
+                            <option value="2">3 Cuotas</option>
+                            <option value="2">6 Cuotas</option>
+                            <option value="2">9 Cuotas</option>
+                            <option value="2">12 Cuotas</option>
+                        </select>
                     </div>
-                    <div class="align-self-end">
-                    <button type="submit" class="btn btn-primary">Comprar</button>
                 </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Comprar</button>
+                    </div>
                 </form>
             </div>
         </main>
