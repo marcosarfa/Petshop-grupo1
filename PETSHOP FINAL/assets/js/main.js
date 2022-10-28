@@ -7,7 +7,8 @@ createApp({
             productos:[],
             productosBk: [],
             ultimosProductos:[],
-            buscador: ""
+            buscador: "",
+            carrito: []
         }
     },
     created(){
@@ -29,6 +30,18 @@ createApp({
             })
 
         },
+        agregarCarrito(producto){
+            if(!this.carrito.includes(producto)){
+                this.carrito.push(producto)
+                console.log(this.carrito);
+            }
+        },
+        eliminarCarrito(producto){
+            this.carrito= this.carrito.filter(productoC => productoC != producto)
+        },
+        vaciarCarrito(){
+            this.carrito= []
+        }
         
     },
     computed:{ 
