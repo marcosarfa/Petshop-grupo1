@@ -8,7 +8,11 @@ createApp({
             productosBk: [],
             ultimosProductos:[],
             buscador: "",
+<<<<<<< HEAD
             carrito: []
+=======
+            producto:{},
+>>>>>>> origin/Ivan
         }
     },
     created(){
@@ -25,10 +29,15 @@ createApp({
                 } else if(document.title =="Farmacia"){
                     this.productos=data.response.filter(producto => producto.tipo == "Medicamento")
                     this.ultimosProductos= this.productos.filter(producto => producto.stock<5)
-                }
+                } else if(document.title == "Detalles"){
+                    let id = new URLSearchParams(location.search).get("id");
+                    this.producto= this.productos.find(producto => producto._id == id);
+                }                
                 this.productosBk=this.productos
             })
-
+        },
+        regresar(){
+            window.history.back();
         },
         agregarCarrito(producto){
             if(!this.carrito.includes(producto)){
