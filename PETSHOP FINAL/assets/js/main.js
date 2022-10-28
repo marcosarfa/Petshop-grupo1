@@ -33,7 +33,6 @@ createApp({
                 this.productosBk=this.productos
             })
         },
-<<<<<<< HEAD
         regresar(){
             window.history.back();
         },
@@ -48,7 +47,7 @@ createApp({
         },
         vaciarCarrito(){
             this.carrito= []
-=======
+        },
         enviarMensaje(){
             Swal.fire({
                 title: 'Su mensaje ha sido enviado con éxito',
@@ -61,7 +60,6 @@ createApp({
             document.forms[0][1].value = "";
             document.forms[0][2].value = "";
             document.forms[0][3].value = "";
->>>>>>> origin/Agustin
         }
         
     },
