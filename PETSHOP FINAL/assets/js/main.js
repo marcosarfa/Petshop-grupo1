@@ -29,6 +29,19 @@ createApp({
             })
 
         },
+        enviarMensaje(){
+            Swal.fire({
+                title: 'Su mensaje ha sido enviado con éxito',
+                imageUrl: './assets/img/succes.png',
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: 'succes',
+            })
+            document.forms[0][0].value = "";
+            document.forms[0][1].value = "";
+            document.forms[0][2].value = "";
+            document.forms[0][3].value = "";
+        }
         
     },
     computed:{ 
