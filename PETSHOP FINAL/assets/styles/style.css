@@ -93,6 +93,12 @@ textarea{
     filter: drop-shadow(0 0 0.75rem var(--marron));
     -webkit-animation: animarNav .5s 1;
 }
+.imgLogoNav{
+    transition: .5s ease-in-out;
+}
+.imgLogoNav:hover{
+    transform: scale(1.06);
+}
 p,a{
     font-size: 1.5rem;
 }
@@ -151,6 +157,40 @@ footer{
 .border-verdeO{
     border: 3px solid var(--verde-oscuro);
 }
+
+.submenu{
+    position: fixed;
+    z-index: 60;
+    right: 5%;
+    bottom: 70%;
+}
+
+.submenu img{
+    height: 7rem;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    max-height: 650px;
+    min-width: 300px;
+}
+
+#carrito{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 @media (max-width:1023px){
     #mancha1{
         height: 30vh;
@@ -189,6 +229,18 @@ footer{
         height: 300px;
     }
 }
+
+@media (max-width:363px){
+    #mancha1{
+        height: 25vh;
+    }
+
+    #mapa{
+        width: 250px;
+        height: 250px;
+    }
+}
+
 @-webkit-keyframes animarNav{
     0%{-webkit-transform:rotate(0deg);}
     7%{-webkit-transform:rotate(10deg);}

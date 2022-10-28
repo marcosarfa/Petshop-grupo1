@@ -73,12 +73,12 @@
                     <input v-model="buscador" class="form-control" type="text" placeholder="Buscar en la Página"
                         aria-label="default input example" />
                 </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn bg-verdeC mb-3" id="btnBuscar">Buscar</button>
-                </div>
             </form>
         </header>
         <main class="container-fluid pt-3 pb-3">
+            <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
+                <img class="w-25 h-25" src="./assets/img/perroBuscador.png" alt="">
+            </div>
             <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3">
                 <div v-for="producto in productos" class="card" style="width: 18rem;">
                     <img :src="producto.imagen" class="card-img-top" alt="...">

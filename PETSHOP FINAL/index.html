@@ -35,8 +35,8 @@
                         <div class="navbar-nav row w-100">
                             <div class="nav-item col active">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./index.html">
-                                    <img class="align-self-center imgNav" src="./assets/img/homeIcono.png" alt="logo de inicio"
-                                        style="width: 3rem" />
+                                    <img class="align-self-center imgNav" src="./assets/img/homeIcono.png"
+                                        alt="logo de inicio" style="width: 3rem" />
                                     <p class="text-center m-0">Inicio</p>
                                 </a>
                             </div>
@@ -71,13 +71,11 @@
                     </div>
                 </div>
             </nav>
+            {{filtro}}
             <form class="bg-verdeO d-flex justify-content-center">
-                <div class="col-auto">
+                <div class="col-auto mb-2">
                     <input v-model="buscador" class="form-control" type="text" placeholder="Buscar en la Página"
                         aria-label="default input example" />
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn bg-verdeC mb-3" id="btnBuscar">Buscar</button>
                 </div>
             </form>
         </header>
@@ -88,22 +86,33 @@
                     Encontrá todo lo que necesitas para tu mascota
                 </h2>
             </div>
-            {{filtro}}
-            <div v-if="buscador!=''" class="row p-md-3 p-2 gap-4 flex-wrap justify-content-center container-fluid">
-                <div v-for="producto in productos" class="card" id="card">
-                    <img :src="producto.imagen" class="card-img-top" alt="{{producto.nombre}}" />
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">{{producto.nombre}}</h5>
-                        <p class="card-text">Precio: $ {{producto.precio}}</p>
-                        <div class="d-flex justify-content-center">
-                            <a :href="'./detalles.html?id='+producto._id" class="btn bg-verdeO text-white p-2 m-0 align-self-center">Detalles</a>
-                            <a :href="" class="btn btn-primary p-2 m-0">Agregar al Carrito</a>
+            <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
+                <img class="w-25 h-25" src="./assets/img/perroBuscador.png" alt="">
+            </div>
+            <div v-if="buscador!=''" class="row p-md-3 p-2 gap-4 flex-wrap justify-content-center container-fluid"
+                data-aos="zoom-in-up" data-aos-once="true">
+                <div v-for="producto in productos" class="card border-verdeO" id="card">
+                    <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}">
+                    <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
+                        <h3 class="card-title text-center fw-bolder text-orange" style="height: 2rem;">
+                            {{producto.nombre}}</h3>
+                        <p class="card-text text-center fw-light" style="height: 2rem;">Precio:<span
+                                class="text-success">$</span>{{producto.precio}}</p>
+                        <div class="d-flex justify-content-around">
+                            <a :href="'./detalles.html?id='+producto._id"
+                                class="btn bg-cremitaO text-black p-2 m-0 align-self-center justify-content-center"
+                                id="botonDetalles">Detalles</a>
+                            <a href="" class="btn text-white p-0 m-0 " @click.prevent="agregarCarrito(producto)"
+                                id="botonCarrito">
+                                <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png"
+                                    alt="" style="width: 3rem;">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div v-if="buscador==''">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-aos="zoom-in">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -111,16 +120,21 @@
                             aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="..." class="d-block w-100" alt="..." />
+                            <img src="./assets/img/banner1.png" class="d-block w-100" alt="..." />
                         </div>
                         <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="..." />
+                            <img src="./assets/img/banner2.png" class="d-block w-100" alt="..." />
                         </div>
                         <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="..." />
+                            <img src="./assets/img/banne3.png" class="d-block w-100" alt="..." />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/img/bannerDoctor.png" class="d-block w-100" alt="..." />
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -135,12 +149,38 @@
                     </button>
                 </div>
             </div>
-            <div id="logoCarrito">
-                <a href=""><img src="" alt=""></a>
+            <div id="logoCarrito" class="submenu">
+                <a v-if="carrito.length==0" class="w-100" href="./carrito.html"><img src="./assets/img/carrito.png" alt=""></a>
+                <a v-if="carrito.length!=0" class="w-100" href="./carrito.html"><img src="./assets/img/carrito1.png" alt=""></a>
+                <div id="carrito">
+
+                    <table id="lista-carrito" class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="producto in carrito">
+                                <td><img :src="producto.imagen" alt=""></td>
+                                <td>{{producto.nombre}}</td>
+                                <td>{{producto.precio}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                </div>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center container-fluid col-11 sobreNos mb-3">
-                <div data-aos="fade-right" data-aos-delay="600" class="p-3">
+            <div class="d-flex justify-content-center align-items-center container-fluid col-11 sobreNos mb-3"
+                data-aos="zoom-in-up" data-aos-once="true" data-aos-anchor-placement="top">
+                <div data-aos="fade-right" data-aos-delay="100" data-aos-once="true" class="p-3">
                     <h3>Sobre Nosotros...</h3>
                     <p>
                         Somos una pequeña empresa en formación con ganas de suplir todas
@@ -151,7 +191,7 @@
                     </p>
                     <p>Estaremos esperandolos!</p>
                 </div>
-                <div data-aos="fade-left" id="contenedorMancha1">
+                <div data-aos="fade-left" data-aos-once="true" id="contenedorMancha1">
                     <img id="mancha1" src="./assets/img/imagenMancha1.png" alt="Perros Jugando" />
                 </div>
             </div>

@@ -8,7 +8,8 @@ createApp({
             productosBk: [],
             ultimosProductos:[],
             buscador: "",
-            producto:{},
+            carrito: [],
+            producto:{}
         }
     },
     created(){
@@ -35,6 +36,18 @@ createApp({
         regresar(){
             window.history.back();
         },
+        agregarCarrito(producto){
+            if(!this.carrito.includes(producto)){
+                this.carrito.push(producto)
+                console.log(this.carrito);
+            }
+        },
+        eliminarCarrito(producto){
+            this.carrito= this.carrito.filter(productoC => productoC != producto)
+        },
+        vaciarCarrito(){
+            this.carrito= []
+        }
         
     },
     computed:{ 
