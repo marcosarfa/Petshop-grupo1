@@ -36,16 +36,18 @@ textarea{
 
 /* ACA TERMINE STYLE DE CONTACTO */
 /* STYLE DE FARMACIA Y JUGUETERIA */
-.card-juguete{
-    transition: .3s ease-in-out;
-}
-.card-juguete:hover{
-    box-shadow: 0px 2px 5px 9px rgba(0,0,0,0.17);
-    transform: scale(1.03);
-}
 /* ACA TERMINA ESTILOS DE FARMACIA Y JUGUETERIA */
 
 /* COMIENZA Index */
+#card{
+    width: 18rem;
+    height: 27rem;
+    transition: .3s ease-in-out;
+}
+#card:hover{
+    box-shadow: 0px 2px 5px 9px rgba(0,0,0,0.17);
+    transform: scale(1.03);
+}
 
 #mancha1{
     height: 60vh;
@@ -61,14 +63,11 @@ textarea{
 
 
 /* ESTILOS UNIVERSALES */
-@font-face {
-    font-family: "Orange Juice";
-    src: url(../font/Orange\ Juice.ttf);
-}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: letraChicuelos;
 }
 :root{
     --amarillo-oscuro:#FFBC42;
