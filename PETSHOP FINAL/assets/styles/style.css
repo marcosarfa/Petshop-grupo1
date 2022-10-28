@@ -1,36 +1,33 @@
 
 /* DIV DE CONTACTOS */
+.contenedor-contacto{
+    background: #2123;
+}
 .formulario{
     display: flex;
     justify-content: center;
+}
+.verificado{
     width: 50%;
-    background-image: url("../img/fondoHueso.png");
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 textarea{
     resize: none;
 }
-
-.tel{
+.botonTelefono{
     background-color: #FFBC42;
-    width: 15rem;
-    height: auto;
-    padding: 0 2rem 0 2rem;
 }
-.email{
+.botonEmail{
     background-color: #D81159;
-    width: 15rem;
-    text-align: center;
 }
-.ubicacion{
+.botonUbi{
     background-color: #218380;
-    width: 15rem;
-    padding: 0 2rem 0 3rem;
 }
 .ancor{
     text-decoration: none;
     color: white;
+}
+.imagenPerros{
+    width: 15rem;
 }
 
 
