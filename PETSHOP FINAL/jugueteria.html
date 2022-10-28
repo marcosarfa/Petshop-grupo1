@@ -80,18 +80,14 @@
                 </div>
             </form>
         </header>
-        <main class="container-fluid pt-3 pb-3 d-flex flex-column gap-2">
-            <div class="p-2 rounded-3">
-                <h2 class="text-center text-white display-5 fw-bold">¡Jugueteria de Los Chicuelos!</h2>
+        <main class="container-fluid p-0 m-0 d-flex flex-column gap-2">
+            <div class="container-fluid p-0 ">
+                <img src="./assets/img/banner1.png" alt="" class="w-100">
             </div>
-<<<<<<< HEAD
             <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
                 <img class="w-25 h-25" src="./assets/img/perroBuscador.png" alt="">
             </div>
-            <div v-if="buscador ==''" class="containe d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos">
-=======
-            <div v-if="buscador ==''" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos" data-aos="zoom-out-up">
->>>>>>> origin/Ivan
+            <div v-if="buscador ==''" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos">
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
                     <div v-for="producto in ultimosProductos" class="card border-verdeO" id="card">
                         <img src="http://josoriojconstrucciones.com.co/wp-content/uploads/2018/04/BANNER-BRITANNIA-ULTIMAS-UNIDADES-02.png" alt="" class="position-absolute" style="max-width: 6rem;">
