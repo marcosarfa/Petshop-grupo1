@@ -20,7 +20,7 @@
     <div id="app">
         <header>
             {{filtro}}
-            <nav class="navbar navbar-expand-md bg-verdeO">
+            <nav class="navbar navbar-expand-md bg-verdeO" id="nav">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./index.html">
                         <img src="./assets/img/losChicuelosletra.png" alt="" id="letrasChicuelos" style="max-width: 6rem;">
@@ -84,9 +84,9 @@
             <div class="p-2 rounded-3">
                 <h2 class="text-center text-white display-5 fw-bold">¡Jugueteria de Los Chicuelos!</h2>
             </div>
-            <div v-if="buscador ==''" class="containe d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos">
+            <div v-if="buscador ==''" class="containe d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos" data-aos="zoom-out-up">
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div v-for="producto in ultimosProductos" class="card border-verdeO" id="card" data-aos="zoom-out-up">
+                    <div v-for="producto in ultimosProductos" class="card border-verdeO" id="card">
                         <img src="http://josoriojconstrucciones.com.co/wp-content/uploads/2018/04/BANNER-BRITANNIA-ULTIMAS-UNIDADES-02.png" alt="" class="position-absolute" style="max-width: 6rem;">
                         <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}" >
                         <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
@@ -123,17 +123,20 @@
         <footer class="container-fluid bg-verdeO d-flex flex-column pt-2    ">
             <div class="w-100 d-flex justify-content-around align-items-center flex-wrap gap-2">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img class="align-self-center" src="./assets/img/petshopfavicon.png" alt=""
+                    <a href="#nav">
+                        <img class="align-self-center" src="./assets/img/petshopfavicon.png" alt=""
                         style="max-width: 3rem;">
+                    </a>
+                    
                 </div>
-                <div class="d-flex flex-column ms-2 me-2">
-                    <p class="text-white text-center fw-bold m-0">Nuestas redes</p>
-                    <div class="align-self-center">
+                <div class="d-flex  ms-2 me-2">
+                    <p class="text-white text-center fw-bold m-0">Nuestas redes:</p>
+                    <div class="align-self-center ms-2">
                         <a href="">
-                            <img src="./assets/img/logoinsta.png" alt="" style="width: 1rem;">
+                            <img src="./assets/img/logoinsta.png" alt="" style="width: 2rem;">
                         </a>
                         <a href="">
-                            <img src="./assets/img/facebook-logo.png" alt="" style="width: 1rem;">
+                            <img src="./assets/img/facebook-logo.png" alt="" style="width: 2rem;">
                         </a>
                     </div>
                 </div>
@@ -142,7 +145,7 @@
                 </div>
                 <div class="d-flex justify-content-center align-items-center p-3">
                     <p class="text-white text-center fw-bold m-0">Medios de pago:</p>
-                    <img src="https://www.sumaelectrohogar.com.ar/img/cms/medios-de-pago-suma(2).png" alt=""
+                    <img src="./assets/img/tarjetas.png" alt=""
                         style="max-width: 10rem;">
                 </div>
             </div>
