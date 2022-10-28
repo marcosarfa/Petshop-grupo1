@@ -78,9 +78,9 @@
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
                     <div data-aos="flip-up" v-for="producto in ultimosProductos" class="card card-juguete" id="card">
                         <img :src="producto.imagen" class="card-img-top h-75" alt="imagen de card">
-                        <div class="card-body h-25" style="border-top: 1px solid black;">
-                            <h5 class="card-title text-center h-50">{{producto.nombre}}</h5>
-                            <p class="text-center text-center h-50">Precio:${{producto.precio}}</p>
+                        <div class="card-body h-25 border-top border-dark d-flex flex-column">
+                            <h5 class="card-title text-center">{{producto.nombre}}</h5>
+                            <p class="text-center text-center">Precio:${{producto.precio}}</p>
                         </div>
                     </div>
                 </div>
