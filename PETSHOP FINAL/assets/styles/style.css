@@ -93,6 +93,12 @@ textarea{
     filter: drop-shadow(0 0 0.75rem var(--marron));
     -webkit-animation: animarNav .5s 1;
 }
+.imgLogoNav{
+    transition: .5s ease-in-out;
+}
+.imgLogoNav:hover{
+    transform: scale(1.06);
+}
 p,a{
     font-size: 1.5rem;
 }
