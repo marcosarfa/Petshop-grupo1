@@ -8,11 +8,8 @@ createApp({
             productosBk: [],
             ultimosProductos:[],
             buscador: "",
-<<<<<<< HEAD
-            carrito: []
-=======
-            producto:{},
->>>>>>> origin/Ivan
+            carrito: [],
+            producto:{}
         }
     },
     created(){
