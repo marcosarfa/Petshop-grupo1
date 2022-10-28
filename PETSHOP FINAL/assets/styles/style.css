@@ -46,7 +46,9 @@ textarea{
 /* ACA TERMINA ESTILOS DE FARMACIA Y JUGUETERIA */
 
 /* COMIENZA Index */
-
+#card{
+    width: 18rem;
+}
 #mancha1{
     height: 60vh;
 }
