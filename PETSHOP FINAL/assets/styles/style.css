@@ -40,15 +40,27 @@ textarea{
 
 /* COMIENZA Index */
 #card{
-    width: 18rem;
-    height: 27rem;
+    width: 16rem;
+    height: 29rem;
     transition: .3s ease-in-out;
+    font-size: 1.5rem;
 }
 #card:hover{
     box-shadow: 0px 2px 5px 9px rgba(0,0,0,0.17);
     transform: scale(1.03);
 }
 
+#botonDetalles:hover{
+    background-color: var(--cremita-o);
+    box-shadow: 0 0 1rem #218380;
+}
+#botonCarrito:hover{
+    box-shadow: 0 0 1rem #218380;
+}
+#contenedorUltimos{
+    box-shadow:inset 0px 0px 68px 0px rgba(0,0,0,0.75);
+    
+}
 #mancha1{
     height: 60vh;
 }
@@ -67,14 +79,23 @@ textarea{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: letraChicuelos;
+    font-family: 'Nanum Pen Script', cursive;
+}
+.imgNav:hover{
+    filter: drop-shadow(0 0 0.75rem var(--marron));
+    -webkit-animation: animarNav .5s 1;
+}
+p,a{
+    font-size: 1.7rem;
 }
 :root{
     --amarillo-oscuro:#FFBC42;
     --coral:#D81159;
     --vino:#8F2D56;
     --verde-oscuro:#218380;
-    --verde-claro:#97C7C2
+    --verde-claro:#97C7C2;
+    --cremita:#fefae0;
+    --cremita-o:#f9e2a7;
     }
 body{
     background-color: var(--verde-claro);
@@ -92,6 +113,14 @@ footer{
 #letrasChicuelos{
     display: none;
 }
+#btnBuscar:hover{
+    background-color: var(--verde-claro);
+    filter: brightness(120%);
+}   
+.text-orange{
+    color: #FFBC42;
+    text-shadow: 1px 1px 1px black;
+}
 .bg-verdeO{
     background-color: var(--verde-oscuro);
 }
@@ -105,7 +134,15 @@ footer{
 .bg-verdeC{
     background-color: var(--verde-claro);
 }
-
+.bg-cremita{
+    background-color: var(--cremita);
+}
+.bg-cremitaO{
+    background-color: var(--cremita-o);
+}
+.border-verdeO{
+    border: 3px solid var(--verde-oscuro);
+}
 @media (max-width:1023px){
     #mancha1{
         height: 30vh;
@@ -143,5 +180,21 @@ footer{
         width: 300px;
         height: 300px;
     }
+}
+@-webkit-keyframes animarNav{
+    0%{-webkit-transform:rotate(0deg);}
+    7%{-webkit-transform:rotate(10deg);}
+    14%{-webkit-transform:rotate(30deg);}
+    21%{-webkit-transform:rotate(45deg);}
+    28%{-webkit-transform:rotate(30deg);}
+    35%{-webkit-transform:rotate(10deg);}
+    42%{-webkit-transform:rotate(0deg);}
+    49%{-webkit-transform:rotate(-10deg);}
+    56%{-webkit-transform:rotate(-30deg);}
+    63%{-webkit-transform:rotate(-45deg);}
+    70%{-webkit-transform:rotate(-30deg);}
+    77%{-webkit-transform:rotate(-10deg);}
+    84%{-webkit-transform:rotate(0deg);}
+    
 }
 /* ACA TERMINA ESTILOS UNIVERSALES */

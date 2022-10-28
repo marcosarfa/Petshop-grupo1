@@ -36,5 +36,6 @@ createApp({
             this.productos=this.productosBk.filter(producto => producto.nombre.toLowerCase().includes(this.buscador.toLowerCase())||producto.descripcion.toLowerCase().includes(this.buscador.toLowerCase()))
         }
         
+        
     }
 }).mount('#app')

@@ -11,11 +11,15 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         <header>
+            {{filtro}}
             <nav class="navbar navbar-expand-md bg-verdeO">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./index.html">
@@ -30,35 +34,35 @@
                         <div class="navbar-nav row w-100">
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./index.html">
-                                    <img class="align-self-center" src="./assets/img/homeIcono.png" alt="logo de inicio"
-                                        style="width: 2rem;">
-                                    <p class="text-center m-0">Home</p>
+                                    <img class="align-self-center imgNav" src="./assets/img/homeIcono.png" alt="logo de inicio"
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Inicio</p>
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./jugueteria.html">
-                                    <img class="align-self-center" src="./assets/img/toysIconos.png" alt=""
-                                        style="width: 2rem;">
+                                    <img class="align-self-center imgNav" src="./assets/img/toysIconos.png" alt=""
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Juguetes</p>
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page" href="./index.html">
-                                    <img class="align-self-center" src="./assets/img/petshoppag.png" alt=""
+                                    <img class="align-self-center imgNav" src="./assets/img/petshoppag.png" alt=""
                                         style="width: 9rem;">
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./farmacia.html">
-                                    <img class="align-self-center" src="./assets/img/vetIcono.png" alt=""
-                                        style="width: 2rem;">
+                                    <img class="align-self-center imgNav" src="./assets/img/vetIcono.png" alt=""
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Farmacia</p>
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./contacto.html">
-                                    <img class="align-self-center" src="./assets/img/contactIcono.png" alt=""
-                                        style="width: 2rem;">
+                                    <img class="align-self-center imgNav" src="./assets/img/contactIcono.png" alt=""
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Contacto</p>
                                 </a>
                             </div>
@@ -66,33 +70,53 @@
                     </div>
                 </div>
             </nav>
+            <form class="bg-verdeO d-flex justify-content-center">
+                <div class="col-auto">
+                    <input v-model="buscador" class="form-control" type="text" placeholder="Buscar en la Página"
+                        aria-label="default input example" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn bg-verdeC mb-3" id="btnBuscar">Buscar</button>
+                </div>
+            </form>
         </header>
-        <main class="container-fluid pt-3 pb-3 d-flex flex-column gap-2">
+        <main class="container pt-3 pb-3 d-flex flex-column gap-2">
             <div class="p-2 rounded-3">
                 <h2 class="text-center text-white display-5 fw-bold">¡Jugueteria de Los Chicuelos 3!</h2>
             </div>
-            <div class="container bg-coral d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3">
-                <div class=" bg-warning rounded-3 m-2 p-2">
-                    <p class="fw-bolder text-white display-6 text-center">Ultimas unidades en Stock!</p>
-                </div>
+            <div v-if="buscador ==''" class="containe d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos">
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div data-aos="flip-up" v-for="producto in ultimosProductos" class="card card-juguete" id="card">
-                        <img :src="producto.imagen" class="card-img-top h-75" alt="imagen de card">
-                        <div class="card-body h-25 border-top border-dark d-flex flex-column">
-                            <h5 class="card-title text-center">{{producto.nombre}}</h5>
-                            <p class="text-center text-center">Precio:${{producto.precio}}</p>
+                    <div v-for="producto in ultimosProductos" class="card border-verdeO" id="card" data-aos="zoom-out-up">
+                        <img src="http://josoriojconstrucciones.com.co/wp-content/uploads/2018/04/BANNER-BRITANNIA-ULTIMAS-UNIDADES-02.png" alt="" class="position-absolute" style="max-width: 6rem;">
+                        <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}" >
+                        <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
+                            <h3 class="card-title text-center fw-bolder text-orange" style="height: 2rem;">{{producto.nombre}}</h3>
+                            <p class="card-text text-center fw-light" style="height: 2rem;">Precio:<span class="text-success">$</span>{{producto.precio}}</p>
+                            <div class="d-flex justify-content-around" >
+                                <a :href="'./detalles.html?id='+producto._id" class="btn bg-cremitaO text-black p-2 m-0 align-self-center justify-content-center" id="botonDetalles">Detalles</a>
+                                <a :href="" class="btn text-white p-0 m-0 " id="botonCarrito">
+                                    <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" alt="" style="width: 3rem;" >
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3">
-                <div v-for="producto in productos" class="card card-juguete" id="card">
-                    <img :src="producto.imagen" class="card-img-top h-75" alt="imagen de card" >
-                        <div class="card-body h-25" style="border-top: 1px solid black;">
-                            <h5 class="card-title text-center h-50">{{producto.nombre}}</h5>
-                            <p class="text-center text-center h-50">Precio:${{producto.precio}}</p>
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+                    <div v-for="producto in productos" class="card border-verdeO" id="card" data-aos="zoom-in-up">
+                        <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}" >
+                        <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
+                            <h3 class="card-title text-center fw-bolder text-orange" style="height: 2rem;">{{producto.nombre}}</h3>
+                            <p class="card-text text-center fw-light" style="height: 2rem;">Precio:<span class="text-success">$</span>{{producto.precio}}</p>
+                            <div class="d-flex justify-content-around" >
+                                <a :href="'./detalles.html?id='+producto._id" class="btn bg-cremitaO text-black p-2 m-0 align-self-center justify-content-center" id="botonDetalles">Detalles</a>
+                                <a :href="" class="btn text-white p-0 m-0 " id="botonCarrito">
+                                    <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" alt="" style="width: 3rem;" >
+                                </a>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </main>
