@@ -61,6 +61,14 @@ textarea{
     padding-right: 0%;
 }
 
+/* CARRITO */
+.labelTarjeta{
+    width: 45%;
+}
+
+.tarjeta{
+    width: 50%;
+}
 
 /* ESTILOS UNIVERSALES */
 *{
