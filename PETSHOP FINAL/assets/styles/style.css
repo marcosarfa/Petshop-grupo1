@@ -73,6 +73,14 @@ textarea{
     padding-right: 0%;
 }
 
+/* CARRITO */
+.labelTarjeta{
+    width: 45%;
+}
+
+.tarjeta{
+    width: 50%;
+}
 
 /* ESTILOS UNIVERSALES */
 *{
@@ -86,7 +94,7 @@ textarea{
     -webkit-animation: animarNav .5s 1;
 }
 p,a{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 :root{
     --amarillo-oscuro:#FFBC42;
@@ -104,10 +112,10 @@ header{
     min-height: 11vh;
 }
 main{
-    min-height: 73vh;
+    min-height: 78vh;
 }
 footer{
-    min-height: 16vh;
+    min-height: 11vh;
 }
 
 #letrasChicuelos{
