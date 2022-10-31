@@ -9,7 +9,9 @@ createApp({
             ultimosProductos: [],
             buscador: "",
             carrito: [],
-            producto: {}
+            producto: {},
+            retiro: "",
+            total:[]
         }
     },
     created() {
@@ -40,25 +42,34 @@ createApp({
             window.history.back();
         },
         agregarCarrito(producto) {
-            if (!this.carrito.includes(producto)) {
-                if (this.carrito.__v < producto.stock) {
-                    this.carrito.__v = ++
-                        this.carrito.push(producto)
-                }
+            if (!this.carrito.includes(producto) && producto.stock>0) {
+                this.carrito.push(producto)
+                this.carrito.forEach(elemento => {
+                    if(elemento._id==producto._id){
+                        elemento.__v++
+                        producto.stock--
+                    }
+                });
+                
             } else {
-                if (this.carrito.__v < producto.stock) {
-                    this.carrito.__v = ++
-                        console.log(this.carrito);
-                } else {
-                    Swal.fire({
-                        title: 'Sweet!',
-                        text: 'Modal with a custom image.',
-                        imageUrl: 'https://unsplash.it/400/200',
-                        imageWidth: 400,
-                        imageHeight: 200,
-                        imageAlt: 'Custom image',
-                    })
-                }
+                this.carrito.forEach(elemento => {
+                    if(elemento._id==producto._id){
+                        if (producto.stock>0) {
+                            elemento.__v++;
+                            producto.stock--;
+                        } else {
+                            Swal.fire({
+                                title: 'No hay stock del producto seleccionado',
+                                text: 'Disculpe las molestias ocasionadas, pronto lo repondremos',
+                                imageUrl: './assets/img/perroNoHayStock.png',
+                                imageWidth: 200,
+                                imageHeight: 200,
+                                imageAlt: 'Custom image',
+                            })
+                        }
+                        
+                    }
+                })
 
             }
             localStorage.setItem('carrito', JSON.stringify(this.carrito))

@@ -70,6 +70,14 @@
         </header>
         <main class="container-fluid d-flex flex-column align-items-center justify-content-center">
             <div class="container">
+                <div class="d-flex">
+                    <div class="w-50 d-flex align-content-center">
+                        <img class="w-25 bg-verdeO rounded-circle" src="./assets/img/carrito.png" alt="">
+                        <div class="d-flex align-items-center">
+                            <h3 class="bg-verdeO rounded-pill p-2">Tu Carrito</h3>
+                        </div>
+                    </div>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -85,10 +93,11 @@
                             <td><img class="w-25" :src="producto.imagen" alt=""></td>
                             <td>{{producto.nombre}}</td>
                             <td>{{producto.precio}}</td>
-                            <td>@mdo</td>
-                            <td :innerHTML="producto.precio*cantidad"></td>
+                            <td>{{producto.__v}}</td>
+                            <td><input type="text" readonly class="form-control-plaintext" id="staticEmail" :value="producto.precio*producto.__v"></td>
                         </tr>
                     </tbody>
+                    <!-- <input v-for="producto in carrito" type="text" readonly class="form-control-plaintext" id="staticEmail" :value="carrito.concat(producto.precio*producto.__v)"> -->
                 </table>
             </div>
             <div class="container mt-5">
@@ -101,7 +110,7 @@
                                     aria-describedby="emailHelp"  required/>
                             </div>
                             <div class="mb-3">
-                                <select class="form-select" aria-label="Default select example" required>
+                                <select v-model="retiro" class="form-select" aria-label="Default select example" required>
                                     <option disabled selected value="">
                                         Seleccione Forma de Compra
                                     </option>
@@ -109,7 +118,7 @@
                                     <option value="2">Envío a Domicilio</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <div v-if="retiro==2" class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="exampleInputPassword1" />
                             </div>
@@ -152,9 +161,9 @@
                                 </option>
                                 <option value="1">Pago Único</option>
                                 <option value="2">3 Cuotas</option>
-                                <option value="2">6 Cuotas</option>
-                                <option value="2">9 Cuotas</option>
-                                <option value="2">12 Cuotas</option>
+                                <option value="3">6 Cuotas</option>
+                                <option value="4">9 Cuotas</option>
+                                <option value="5">12 Cuotas</option>
                             </select>
                         </div>
                     </div>
@@ -186,7 +195,7 @@
                 </div>
                 <div class="d-flex justify-content-center align-items-center p-3">
                     <p class="text-white text-center fw-bold m-0">Medios de pago:</p>
-                    <img src="https://www.sumaelectrohogar.com.ar/img/cms/medios-de-pago-suma(2).png" alt=""
+                    <img src="./assets/img/tarjetas.png" alt=""
                         style="max-width: 10rem" />
                 </div>
             </div>

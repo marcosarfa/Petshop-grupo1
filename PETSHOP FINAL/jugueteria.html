@@ -101,7 +101,7 @@
                         </tbody>
                     </table>
 
-                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                    <a @click.prevent="vaciarCarrito()" href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
                 </div>
             </div>
             <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
@@ -125,7 +125,7 @@
                             <div class="d-flex justify-content-around align-content-center p-2">
                                 <h3>Stock:<span class="text-white">{{producto.stock}}</span></h3>
                                 <h3><span class="text-success">$</span>{{producto.precio}}</h3>
-                                <a href="#">
+                                <a @click.prevent="agregarCarrito(producto)" href="#">
                                     <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" >
                                 </a>
                             </div>
@@ -218,6 +218,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
