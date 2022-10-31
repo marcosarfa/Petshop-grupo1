@@ -47,9 +47,9 @@
                                 </a>
                             </div>
                             <div class="nav-item col">
-                                <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page" href="./index.html">
+                                <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page" href="./index.html" >
                                     <img class="align-self-center imgLogoNav" src="./assets/img/petshoppag.png" alt=""
-                                        style="width: 9rem;">
+                                        style="width: 9rem;" id="logoNav">
                                 </a>
                             </div>
                             <div class="nav-item col">
@@ -70,20 +70,13 @@
                     </div>
                 </div>
             </nav>
-            <form class="bg-verdeO d-flex justify-content-center">
-                <div class="col-auto">
-                    <input v-model="buscador" class="form-control" type="text" placeholder="Buscar en la Página"
-                        aria-label="default input example" />
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn bg-verdeC mb-3" id="btnBuscar">Buscar</button>
-                </div>
-            </form>
+            
         </header>
         <main class="container-fluid p-0 m-0 d-flex flex-column gap-2">
             <div v-if="buscador ==''" class="container-fluid p-0">
                 <img src="./assets/img/banner1.png" alt="" class="w-100">
             </div>
+<<<<<<< HEAD
             <div id="logoCarrito" class="submenu">
                 <a v-if="carrito.length==0" class="w-100" href="./carrito.html"><img src="./assets/img/carrito.png" alt=""></a>
                 <a v-if="carrito.length!=0" class="w-100" href="./carrito.html"><img src="./assets/img/carrito1.png" alt=""></a>
@@ -115,27 +108,68 @@
             <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
                 <img class="w-25 h-25" src="./assets/img/perroBuscador.png" alt="">
             </div>
+=======
+>>>>>>> origin/Ivan
             <div v-if="buscador ==''" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 p-3 flex-column rounded-3" id="contenedorUltimos" data-aos="fade">
-                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div v-for="producto in ultimosProductos" class="card border-verdeO" id="card">
-                        <img src="http://josoriojconstrucciones.com.co/wp-content/uploads/2018/04/BANNER-BRITANNIA-ULTIMAS-UNIDADES-02.png" alt="" class="position-absolute" style="max-width: 6rem;">
-                        <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}" >
-                        <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
-                            <h3 class="card-title text-center fw-bolder text-orange" style="height: 2rem;">{{producto.nombre}}</h3>
-                            <p class="card-text text-center fw-light" style="height: 2rem;">Precio:<span class="text-success">$</span>{{producto.precio}}</p>
-                            <div class="d-flex justify-content-around" >
-                                <a :href="'./detalles.html?id='+producto._id" class="btn bg-cremitaO text-black p-2 m-0 align-self-center justify-content-center" id="botonDetalles">Detalles</a>
-                                <a :href="" class="btn text-white p-0 m-0 " id="botonCarrito">
-                                    <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" alt="" style="width: 3rem;" >
+                <img src="https://media4.giphy.com/media/Na3VeD6sxKwx9j1m2y/giphy.gif?cid=6c09b9523721ccfeed5fb36b442e7f774c4c56cedd3f7946&rid=giphy.gif&ct=s" alt="" style="position: relative;top:0;max-width: 15rem;z-index: 10;">
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3" data-aos="fade">                    
+                    <div v-for="producto in ultimosProductos" class="cardCL">
+                        <div class="face front">
+                            <img src="http://josoriojconstrucciones.com.co/wp-content/uploads/2018/04/BANNER-BRITANNIA-ULTIMAS-UNIDADES-02.png" class="position-absolute w-100" style="max-width: 6rem;z-index: 10;">
+                            <img :src="producto.imagen" alt="imagen de producto" id="imgCard">
+                            <div class="d-flex gap-3">
+                                <h3 class="align-self-center col-7 text-orange fw-bolder">{{producto.nombre}}</h3>
+                                <h3 class="align-self-center col-5 display-5"><span class="text-success">$</span>{{producto.precio}}</h3>
+                            </div>
+                        </div>
+                        <div class="face back">
+                            <h3 class="text-orange fw-bolder">{{producto.nombre}}</h3>
+                            <p class="descripcion">{{producto.descripcion}}</p>
+                            <div class="d-flex justify-content-around align-content-center p-2">
+                                <h3><span class="text-success">$</span>{{producto.precio}}</h3>
+                                <a href="#">
+                                    <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" >
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <form class="d-flex justify-content-center mt-3">
+                <div class="col-auto">
+                    <input v-model="buscador" class="form-control" type="text" placeholder="Buscar en la Juguetes"
+                        aria-label="default input example" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn bg-verdeO text-white mb-3" id="btnBuscar">Buscar</button>
+                </div>
+            </form>
+            <div v-if="productos.length== 0 && productosBk.length!=0" class="contenedor d-flex justify-content-center">
+                <img class="w-25 h-25" src="./assets/img/perroBuscador.png" alt="">
+            </div>
             <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3">
                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-3 mb-3">
-                    <div v-for="producto in productos" class="card border-verdeO" id="card" data-aos="zoom-in-up">
+                    <div v-for="producto in productos" class="cardCL" data-aos="fade-up">
+                        <div class="face front">
+                            <img :src="producto.imagen" alt="imagen de producto" id="imgCard">
+                            <div class="d-flex gap-3">
+                                <h3 class="align-self-center col-7 text-orange fw-bolder">{{producto.nombre}}</h3>
+                                <h3 class="align-self-center col-5 display-5"><span class="text-success">$</span>{{producto.precio}}</h3>
+                            </div>
+                        </div>
+                        <div class="face back">
+                            <h3 class="text-orange fw-bolder">{{producto.nombre}}</h3>
+                            <p class="descripcion">{{producto.descripcion}}</p>
+                            <div class="d-flex justify-content-around align-content-center p-2">
+                                <h3><span class="text-success">$</span>{{producto.precio}}</h3>
+                                <a href="#">
+                                    <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <div v-for="producto in productos" class="card border-verdeO" id="card" data-aos="zoom-in-up">
                         <img :src="producto.imagen" class="card-img-top h-50" alt="{{producto.nombre}}" >
                         <div class="card-body d-flex flex-column justify-content-between border-top bg-cremita">
                             <h3 class="card-title text-center fw-bolder text-orange" style="height: 2rem;">{{producto.nombre}}</h3>
@@ -147,7 +181,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
