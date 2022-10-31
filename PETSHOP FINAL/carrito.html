@@ -97,10 +97,17 @@
                             <td><input type="text" readonly class="form-control-plaintext" id="staticEmail" :value="producto.precio*producto.__v"></td>
                         </tr>
                     </tbody>
-                    <!-- <input v-for="producto in carrito" type="text" readonly class="form-control-plaintext" id="staticEmail" :value="carrito.concat(producto.precio*producto.__v)"> -->
                 </table>
+                
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Total a Pagar: $</label>
+                        <div class="col-sm-10">
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" :value="totalR">                                            
+                        </div>
+                      </div>
+
             </div>
-            <div class="container mt-5">
+            <div class="container mt-5 mb-5">
                 <form @submit.prevent="compraRealizada">
                     <div class="d-flex justify-content-center mb-5">
                         <div class="d-flex flex-column col-8">

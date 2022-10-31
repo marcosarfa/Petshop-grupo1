@@ -170,13 +170,22 @@ footer{
     background-color: white;
     padding: 20px;
     min-height: 400px;
-    max-height: 650px;
-    min-width: 300px;
+    max-height: 700px;
+    min-width: 400px;
 }
 
 #carrito{
     overflow: scroll;
     overflow-x: hidden;
+}
+
+.borrar-producto {
+    background-color: red;
+    border-radius: 50%;
+    padding: 2px 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 @media (max-width:1023px){

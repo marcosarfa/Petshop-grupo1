@@ -11,13 +11,17 @@ createApp({
             carrito: [],
             producto: {},
             retiro: "",
-            total:[]
+            totalR: "",
+            total: []
         }
     },
     created() {
         this.traerDatos()
         if (JSON.parse(localStorage.getItem('carrito'))) {
             this.carrito = JSON.parse(localStorage.getItem('carrito'))
+        }
+        if (JSON.parse(localStorage.getItem('total'))) {
+            this.totalR = JSON.parse(localStorage.getItem('total'))
         }
     },
     methods: {
@@ -42,19 +46,21 @@ createApp({
             window.history.back();
         },
         agregarCarrito(producto) {
-            if (!this.carrito.includes(producto) && producto.stock>0) {
+            if (!this.carrito.includes(producto) && producto.stock > 0) {
                 this.carrito.push(producto)
+                this.total.push(producto.precio)
                 this.carrito.forEach(elemento => {
-                    if(elemento._id==producto._id){
+                    if (elemento._id == producto._id) {
                         elemento.__v++
                         producto.stock--
                     }
                 });
-                
+
             } else {
                 this.carrito.forEach(elemento => {
-                    if(elemento._id==producto._id){
-                        if (producto.stock>0) {
+                    if (elemento._id == producto._id) {
+                        if (producto.stock > 0) {
+                            this.total.push(producto.precio)
                             elemento.__v++;
                             producto.stock--;
                         } else {
@@ -67,22 +73,43 @@ createApp({
                                 imageAlt: 'Custom image',
                             })
                         }
-                        
+
                     }
                 })
 
             }
             localStorage.setItem('carrito', JSON.stringify(this.carrito))
+
+            this.totalR = this.total.reduce(function (precio1, precio2) {
+                return precio1 + precio2;
+            })
+            localStorage.setItem('total', JSON.stringify(this.totalR))
         },
         eliminarCarrito(producto) {
             this.carrito = this.carrito.filter(productoC => productoC != producto)
+            this.total = this.total.filter(precio => precio != producto.precio)
+            if (this.total.length == 0) {
+                this.totalR = 0
+            } else {
+                this.totalR = this.total.reduce(function (precio1, precio2) {
+                    return precio1 + precio2;
+                })
+            }
+            producto.stock = producto.stock + producto.__v
+            producto.__v = 0
+            localStorage.setItem('total', JSON.stringify(this.totalR))
             localStorage.setItem('carrito', JSON.stringify(this.carrito))
         },
         vaciarCarrito() {
+            this.traerDatos()
             this.carrito = []
+            this.total = []
+            this.totalR = 0
+            localStorage.setItem('total', JSON.stringify(this.totalR))
             localStorage.setItem('carrito', JSON.stringify(this.carrito))
         },
-        compraRealizada(){
+        compraRealizada() {
+            this.vaciarCarrito()
             Swal.fire({
                 title: 'Compra Realizada!',
                 text: 'Muchas gracias! Lo esperamos de regreso!',
@@ -90,7 +117,7 @@ createApp({
                 imageWidth: 200,
                 imageHeight: 200,
                 imageAlt: 'Custom image'
-        })
+            })
         },
         enviarMensaje() {
             Swal.fire({
