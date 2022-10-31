@@ -96,6 +96,13 @@ body{
 header{
     min-height: 11vh;
 }
+nav{
+    position:fixed !important;
+    width: 100% !important;
+    top: 0;
+    z-index: 20;
+    padding: 0 !important;
+}
 main{
     min-height: 78vh;
 }
