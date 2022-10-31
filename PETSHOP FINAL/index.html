@@ -20,51 +20,59 @@
 <body>
     <div id="app">
         <header id="header">
-            <nav class="navbar navbar-expand-md bg-verdeO" id="nav">
+            <nav class="navbar navbar-expand-md bg-verdeO">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./index.html">
                         <img src="./assets/img/losChicuelosletra.png" alt="" id="letrasChicuelos"
-                            style="max-width: 6rem" />
+                            style="max-width: 6rem;">
                     </a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <span><img src="./assets/img/petshopfavicon.png" alt="" style="width: 2rem" /></span>
+                        <span><img src="./assets/img/petshopfavicon.png" alt="" style="width: 2rem;"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="navbar-nav row w-100">
-                            <div class="nav-item col active">
+                            <div class="nav-item col">
+                                <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page"
+                                    href="./index.html">
+                                    <img class="align-self-center imgLogoNav" src="./assets/img/petshoppag.png" alt=""
+                                        style="width: 9rem;" id="logoNav">
+                                </a>
+                            </div>
+                            <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./index.html">
                                     <img class="align-self-center imgNav" src="./assets/img/homeIcono.png"
-                                        alt="logo de inicio" style="width: 3rem" />
+                                        alt="logo de inicio" style="width: 3rem;">
                                     <p class="text-center m-0">Inicio</p>
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./jugueteria.html">
                                     <img class="align-self-center imgNav" src="./assets/img/toysIconos.png" alt=""
-                                        style="width: 3rem" />
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Juguetes</p>
-                                </a>
-                            </div>
-                            <div class="nav-item col" id="logoNav">
-                                <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page" href="#">
-                                    <img class="align-self-center imgNav" src="./assets/img/petshoppag.png" alt=""
-                                        style="width: 9rem" />
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./farmacia.html">
                                     <img class="align-self-center imgNav" src="./assets/img/vetIcono.png" alt=""
-                                        style="width: 3rem" />
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Farmacia</p>
                                 </a>
                             </div>
                             <div class="nav-item col">
                                 <a class="nav-link text-light fw-bold d-flex flex-column" href="./contacto.html">
                                     <img class="align-self-center imgNav" src="./assets/img/contactIcono.png" alt=""
-                                        style="width: 3rem" />
+                                        style="width: 3rem;">
                                     <p class="text-center m-0">Contacto</p>
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./foro.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/foroPerros.png" alt=""
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Perdidos</p>
                                 </a>
                             </div>
                         </div>
@@ -215,7 +223,7 @@
             </div>
         </main>
         <footer class="container-fluid bg-verdeO d-flex  align-content-center justify-content-center">
-            <div class="w-100 d-flex justify-content-center align-items-center flex-wrap gap-5 p-1">
+            <div class="w-100 d-flex justify-content-around align-items-center flex-wrap gap-2 p-1">
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="#nav">
                         <img class="align-self-center" src="./assets/img/petshopfavicon.png" alt=""

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro</title>
+    <link rel="icon" href="./assets/img/petshopfavicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header id="header">
+            {{filtro}}
+            <nav class="navbar navbar-expand-md bg-verdeO">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./assets/img/losChicuelosletra.png" alt="" id="letrasChicuelos"
+                            style="max-width: 6rem;">
+                    </a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span><img src="./assets/img/petshopfavicon.png" alt="" style="width: 2rem;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav row w-100">
+                            <div class="nav-item col">
+                                <a class="nav-link text-white fw-bold d-flex flex-column" aria-current="page"
+                                    href="./index.html">
+                                    <img class="align-self-center imgLogoNav" src="./assets/img/petshoppag.png" alt=""
+                                        style="width: 9rem;" id="logoNav">
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./index.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/homeIcono.png"
+                                        alt="logo de inicio" style="width: 3rem;">
+                                    <p class="text-center m-0">Inicio</p>
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./jugueteria.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/toysIconos.png" alt=""
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Juguetes</p>
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./farmacia.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/vetIcono.png" alt=""
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Farmacia</p>
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./contacto.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/contactIcono.png" alt=""
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Contacto</p>
+                                </a>
+                            </div>
+                            <div class="nav-item col">
+                                <a class="nav-link text-light fw-bold d-flex flex-column" href="./foro.html">
+                                    <img class="align-self-center imgNav" src="./assets/img/foroPerros.png" alt=""
+                                        style="width: 3rem;">
+                                    <p class="text-center m-0">Perdidos</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container-fluid pt-4 pb-4 d-flex flex-column gap-2 align-items-center foro">
+            <img src="https://www.perroperdido.mx/wp-content/uploads/2018/11/logo-perro-perdido-mx.png" alt="" style="max-width: 5rem;">
+            <div class="container" style="max-width: 50rem;margin-top:30px;">
+                <form id="formulario" style="background-color: #7fa8a4" class="p-4 rounded-3 d-flex flex-column ">
+                    <div class="mb-3 text-center">
+                        <label for="nombreMascota" class="form-label" style="font-size: 1.5rem;color: white;text-shadow: 1px 1px 1px black;">Nombre de Mascota Perdida:</label>
+                        <input class="form-control" type="text" id="nombreMascota" name="transactionName">
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label for="descripcionMascota" class="form-label" style="font-size: 1.5rem;color: white;text-shadow: 1px 1px 1px black;">Descripcion:</label>
+                        <input class="form-control" type="text" id="descripcionMascota" name="transactionDescription">
+                    </div>
+                    <button id="botonDeEnvio" class="btn bg-verdeO text-white align-self-center">Enviar</button>
+                </form>
+            </div>
+            <table id="transactionTable" >
+                <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <footer class="container-fluid bg-verdeO d-flex  align-content-center justify-content-center">
+            <div class="w-100 d-flex justify-content-around align-items-center flex-wrap gap-2 p-1">
+                <div class="d-flex  ms-2 me-2">
+                    <p class="text-white text-center fw-bold m-0">Nuestas redes:</p>
+                    <div class="align-self-center ms-2">
+                        <a href="">
+                            <img src="./assets/img/logoinsta.png" alt="" style="width: 2rem;">
+                        </a>
+                        <a href="">
+                            <img src="./assets/img/facebook-logo.png" alt="" style="width: 2rem;">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <a href="" class="text-white text-center fw-bold text-decoration-none">Desarrolladores</a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center p-3">
+                    <p class="text-white text-center fw-bold m-0">Medios de pago:</p>
+                    <img src="./assets/img/tarjetas.png" alt="" style="max-width: 10rem;">
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="./assets/js/foro.js"></script>
+</body>
+
+</html>

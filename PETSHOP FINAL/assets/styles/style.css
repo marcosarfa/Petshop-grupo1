@@ -339,3 +339,34 @@ footer{
 #arriba:hover{
     opacity: 1;
 }
+/* ACA COMIENZA ESTILO DE TABLAS DE FORO */ 
+table{
+    width: 90%;
+    border: 2px solid var(--verde-oscuro);
+}
+table th{
+    border: 2px solid var(--verde-oscuro);
+    background-color: var(--verde-oscuro);
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+}
+table td{
+    border: 2px solid var(--verde-oscuro);
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+}
+#botonDeEnvio{
+    width: 20%;
+}
+#botonDeEnvio:hover{
+    background-color: var(--verde-oscuro) !important;
+    filter: brightness(120%) !important;
+}
