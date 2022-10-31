@@ -1,5 +1,6 @@
 
 /* DIV DE CONTACTOS */
+
 .contenedor-contacto{
     background: #2123;
 }
@@ -13,14 +14,19 @@
 textarea{
     resize: none;
 }
-.botonTelefono{
+.cardTelefono{
     background-color: #FFBC42;
+    min-width: 25%;
+    border-radius: 2rem 0 0 2rem;
 }
-.botonEmail{
+.cardEmail{
     background-color: #D81159;
+    min-width: 25%;
 }
-.botonUbi{
+.cardUbi{
     background-color: #218380;
+    min-width: 25%;
+    border-radius: 0 2rem 2rem 0;
 }
 .ancor{
     text-decoration: none;
@@ -204,6 +210,22 @@ footer{
 @media (max-width:543px){
     #contenedorMancha1{
         align-self: flex-end;
+
+    }
+    .contenedorContactos{
+        flex-wrap: wrap
+    }
+    .cardTelefono{
+        min-width: 18rem;
+        border-radius: 2rem 2rem 0 0;
+    }
+    .cardEmail{
+        min-width: 18rem;
+    }
+    
+    .cardUbi{
+        min-width: 18rem;
+        border-radius: 0 0 2rem 2rem ;
     }
 
     #mapa{
