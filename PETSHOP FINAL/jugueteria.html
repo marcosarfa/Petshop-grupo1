@@ -170,7 +170,7 @@
                             <div class="d-flex justify-content-around align-content-center p-2">
                                 <h3>Stock:<span class="text-white">{{producto.stock}}</span></h3>
                                 <h3><span class="text-success">$</span>{{producto.precio}}</h3>
-                                <a href="#">
+                                <a @click.prevent="agregarCarrito(producto)" href="#">
                                     <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/279086414570-2106-mla-mlc-mco-como-funciona-el-carrito-de-compras-de-mercado-libre-icono-01.png" >
                                 </a>
                             </div>
